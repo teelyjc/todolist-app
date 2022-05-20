@@ -1,4 +1,5 @@
 <script>
+	import TodoList from './TodoList.svelte';
 	let todoList = [];
 	
 	let todo = {
@@ -17,6 +18,7 @@
 	}
 	
 	function removeTodo(index) {
+		if (!todo.name) return;
 		todoList = [
 			...todoList.slice(0, index),
 			...todoList.slice(index + 1, todoList.length),
